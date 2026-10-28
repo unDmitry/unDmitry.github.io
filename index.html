@@ -3,26 +3,54 @@
     <head>
         <meta charset="UTF-8" />	<!--кодировка-->
         <title>Зад. 3</title>	<!--заголовок-->
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
     
-    <body>
+    <body class="body">
         <!--Семантика-->
-        <header>
-            <!--шапка сайта или раздела-->
+        <header class="header">    <!--шапка сайта или раздела-->
+            <nav class="header__nav nav">
+                <a class="nav__link" href="#">Мероприятия</a>
+                <a class="nav__link" href="#">Блог</a>
+                <a class="nav__link" href="#">О нас</a>
+                <a class="nav__link" href="#">Контакты</a>
+            </nav>
         </header>
 
-        <main>	<!--основное содержимое-->
-            <section>
-                <!--секция 1-->
+        <main class="main">	<!--основное содержимое-->
+
+            <header class="main__header mheader">    <!--Их может быть несколько в документе-->
+                <h1 class="mheader__h1">АРТ-ПРОСТРАНСТВО</h1>   <!--Основной заголовок-->
+            </header>
+
+            <section class="main__section msection">   <!--мероприятия-->
+                <h2 class="msection__h2">
+                    Мероприятия
+                </h2>
+            </section>
+            
+            <section class="main__section msection">   <!--блог-->
+                <h2 class="msection__h2">
+                    Блог
+                </h2>
             </section>
 
-            <section>
-                <!--секция 1-->
+            <section class="main__section msection">   <!--о нас-->
+                <h2 class="msection__h2">
+                    О нас
+                </h2>
             </section>
+
+            <section class="main__section msection">   <!--контакты-->
+                <h2 class="msection__h2">
+                    Контакты
+                </h2>
+            </section>
+
         </main>
 
-        <footer>
-            <!--Низ -->
+        <footer class="footer">    <!--Низ -->
+            
         </footer>
         <!--/Семантика-->
 

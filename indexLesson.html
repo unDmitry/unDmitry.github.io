@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">	<!--язык русский-->
+    <head>
+        <meta charset="UTF-8" />	<!--кодировка-->
+        <title>Зад. 3</title>	<!--заголовок-->
+        
+        <!--Внутренняя таблица стилей
+        <style>
+        /*@import url("fonts.css");   //Первой строкой в <style>  //Внешняя таблица стилей*/
+            h1 {
+                color: red;
+        }
+        </style>
+        -->
+        
+        <!--Внешняя таблица стилей. Без <style>-->
+        <link rel="stylesheet" href="styles/stylesLessons.css">
+    </head>
+    
+    <body>
+        <!--Семантика-->
+        <header>    <!--шапка сайта или раздела-->
+            <nav>
+                <a href="#">Мероприятия</a>
+                <a href="#">Блог</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </nav>
+        </header>
+
+        <main>	<!--основное содержимое-->
+
+            <header>    <!--Их может быть несколько в документе-->
+                <h1>АРТ-ПРОСТРАНСТВО</h1>   <!--Основной заголовок-->
+            </header>
+
+            <section id="dcp">   <!--мероприятия-->
+                <h2>
+                    Мероприятия
+                </h2>
+                <h2>
+                    Мероприятия
+                </h2>
+                <h2>
+                    Мероприятия
+                </h2>
+                <h2>
+                    Мероприятия
+                </h2>
+            </section>
+            
+            <section>   <!--блог-->
+                <h2>
+                    Блог
+                </h2>
+
+                <div class="container1">
+                    <p class="text1">
+                        Этот блок содержит различные псевдоэлементы
+                    </p>
+                </div>
+            </section>
+
+            <section>   <!--о нас-->
+                <h2>
+                    О нас
+                </h2>
+            </section>
+
+            <section>   <!--контакты-->
+                <h2>
+                    Контакты
+                </h2>
+            </section>
+
+            <div class="popup">
+                <button class="popup__button button">
+                    Назад
+                </button>
+                            
+                <button 
+                    class="popup__button 
+                            popup__button--no-margin
+                            button 
+                            button--red"
+                >
+                    Отправить
+                </button>
+            </div>
+
+        </main>
+
+        <footer>    <!--Низ -->
+            
+        </footer>
+        <!--/Семантика-->
+
+    </body>
+</html>
