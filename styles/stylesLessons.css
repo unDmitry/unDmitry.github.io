@@ -1,124 +1,97 @@
-h1 {  /*Селектор - это элемент веб-страницы, который подлежит форматированию браузером*/
-    /*Блок объявлений - это код, заключенный в { }. Он содержит ОБЪЯВЛЕНИЯ, состоящие из
-    CSS-свойств, применяемых к данному селектору и их ЗНАЧЕНИЯ*/
+h1 {
     color: red;
-    /*font-size: 35px;*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 100%;
 }
 
-/*
-универсальный	* {}	        выбирает все элементы
-по тегу         p {}    	    <p>Текст</p>
-по классу	    .about {}   	<p class="about">Текст</p>
-по id       	#description {} <p id="description">Текст</p>
-по атрибуту 	[title]         <p title="Описание">Текст</p>
-*/
+/**/
+.container {
+  box-sizing: border-box;
+  width: 270px;
+  margin: 10px auto;
+  padding: 0 20px;
+  border: 4px solid gray;
+  font-size: 16px;
+  line-height: 20px;
+}
 
-/*
-1)  section .about {}   //Комбинатор потомков (пробел) - выбирает элементы, которые находятся
-                    ВНУТРИ указанного элемента ВНЕ ЗАВИСИМОСТИ от уровня вложенности
-2)  section>.about {}   //Комбинатор дочерний (>) - выбирает ТОЛЬКО ТЕ элементы, которые
-                    являются ДОЧЕРНИМИ непосредственно по отношению к указанному элементу
-                    и находятся на первом уровне вложенности
-3)  .about+.description {}  //Комбинатор следующего соседнего элемента (+) - выбирает элемент,
-        который находится непосредственно после указанного элемента, если у них общий родитель.
-        Такой селектор выбирает ПЕРВЫЙ элемент с классом description, расположенный
-        непосредственно после элемента с классом about
-4)  .title,
-    .about-title {
-        color: red; //Если разные элементы имеют схожие стили,
-    }               то их можно объединять, перечисляя через запятую
-*/
+.block {
+  margin: 20px 0;
+  background: PapayaWhip;
+}
 
-/*Псевдокласс*/
-    h2:hover {  /*При наведении*/
-        color: red;
-    }
-    h2:active { /*При нажатии*/
-        color: darkred;
-    }
-    nav>:first-child {  /*Находит первый элемент в родителе*/
-        color: green;
-    }
-    nav>:last-child {   /*Находит последний элемент в родителе*/
-        color: red;
-    }
+.inline {
+  background: crimson;
+  color: white;
+}
 
-    /*
-    :nth-child(2) - находит элемент по позиции в своем родителе
-    :nth-child(even) или :nth-child(2n) - четные элементы
-    :nth-child(odd) или :nth-child(2n+1) - нечетные элементы
-    */    
-    #dcp :nth-child(3) {
-        color: grey;
-    }
-/*Псевдокласс*/
+/**/
+.container2 {
+  width: 250px;
+  height: 150px;
+  margin: 0 auto;   /*вертикальный отступ =0, горизонтальный - займёт всё пространство (ТО можно выравнивать блоки по центру)*/
+  border: 5px solid gray;
+  background-color: lightblue;
+}
+.child {
+  width: 40%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: lightcoral;
+}
 
-/*Псевдоэлементы*/
-    /*
-    ::before и ::after - создают псевдоэлементы, первый и последний потомок выбранного элемента.
-    Для отображения ОБЯЗАТЕЛЬНО указание свойства content (его значение может быть произвольной
-    строкой текста (даже пустой), или специальными ключевыми словами и правилами. По умолчанию
-    ведут себя как <span>
+/*Для разных сторон MARGIN и PADDING можно задавать так:
+.selector {
+  padding: 10px; - со всех сторон
+  padding: 10px 20px; - сверху+снизу, слева+справа
+  padding: 10px 20px 30px; - сверху, слева+справа, снизу
+  padding: 10px 20px 30px 40px; - сверху, справа, снизу, слева
+  
+Можно поотдельности:
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 40px;
+}*/
 
-    ::first-letter и ::first-line - применяет стили к первой букве первой строки
-    блочного элемента, но только если нет другого предшествующего нетекстового содержимого
-    */
-    .container1 {
-        box-sizing: border-box; /*все расчёты ВНУТРЬ*/
-        width: 250px;   /*Ширина*/
-/*        height: 10px;   /*Высота*/
-        margin: 20px auto;  /*Внешние отступы*/
-        padding: 20px;  /*Внутренние отступы*/
-        border: 4px solid gray; /*Рамка*/
-        font-size: 16px;    /*Размер текста*/
-        line-height: 20px;  /*Высота строки*/
-    }
-    .container1::before {
-        content: "::before";
-    }
-    .container1::after {
-        content: "::after";
-    }
-    .container1::before,
-    .container1::after {
-        box-sizing: border-box;
-        display: block; /*Блочный элемент*/
-        width: 100%;
-        padding: 10px;
-        background: coral;  /*Цвет фона*/
-        font-weight: 700;   /*Толщина*/
-        text-align: center; /*Выстраивает поцентру*/
+.parent {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  overflow: hidden;
     }
 
-    .text1 {
-        margin: 20px 20px;  /*1 - снизу/сверху, 2 - слева/справа*/
-    }
-    .text1::first-letter {   /*Первая буква*/
-        color: coral;
-        font-size: 20px;
-    }
+    .container {
+  box-sizing: border-box;
+  width: 220px;
+  margin: 10px auto;
+  padding: 0 20px;
+  border: 4px solid gray;
+  font-size: 16px;
+  line-height: 1.25;
+}
 
-    .text1::first-line { /*Первая строка*/
-        color: gray;
-    }
-/*Псевдоэлементы*/
+.text {
+  background: PapayaWhip;
+}
 
-/*БЭМ*/
-    .button {
-        height: 20px;
-        padding: 0;
-        background: transparent;
-        font-size: 16px;
-        line-height: 20px;
-        color: rgb(90, 32, 32);
-    }
-    .button--red {
-        color: red;
-    }
+.text--left {
+  text-align: left;
+}
 
-    .popup__button {
-        margin: 0 10px;
-    }
-    .popup__button--no-margin {
-        margin: 0;
-    }
+.text--right {
+  text-align: right;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.text--justify {
+  text-align: justify;
+}
